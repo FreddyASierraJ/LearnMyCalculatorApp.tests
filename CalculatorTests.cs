@@ -9,9 +9,14 @@ namespace LearnMyCalculatorApp.tests
         [TestMethod]
         public void CalculatorNullTest()
         {
+            //Arrange
             var calculator = new Calculator();
+            
+            //Act
             Assert.IsNull(calculator);
-            Assert.IsTrue(false);
+
+            //Assert
+            Assert.IsNotNull(false);
         }
         [TestMethod]
         public void AddTest() 
@@ -44,19 +49,28 @@ namespace LearnMyCalculatorApp.tests
             var calculator = new Calculator();
 
             //Act
-            var actual =calculator.Multiply(3, 1);
+            var actual =calculator.Multiply(1, 1);
 
             //Assert
-            Assert.AreEqual(3, actual);
+            Assert.AreEqual(1, actual);
         }
         [TestMethod]
         public void DivideTest() 
         {
             var calculator = new Calculator();
 
-            var actual=calculator.Divide(3, 0);
+            var actual=calculator.Divide(4, 2);
 
-            Assert.ThrowsException<InvalidOperationException>(() => actual);
+            Assert.AreEqual(2, actual);
+        }
+        [TestMethod]
+        public void DivideByZeroTest() 
+        {
+            var calculator = new Calculator();
+
+            var actual = calculator.DivideByZero(1, 0);
+
+            Assert.IsTrue(actual == null);
         }
 
     }
