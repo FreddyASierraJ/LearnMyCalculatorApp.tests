@@ -7,8 +7,11 @@ namespace LearnMyCalculatorApp.tests
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void CalculatorNullTest()
         {
+            var calculator = new Calculator();
+            Assert.IsNull(calculator);
+            Assert.IsTrue(false);
         }
     }
 }
