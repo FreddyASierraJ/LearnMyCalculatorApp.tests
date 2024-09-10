@@ -1,3 +1,6 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using LearnMyCalculatorApp;
+
 namespace LearnMyCalculatorApp.tests
 {
     [TestClass]
